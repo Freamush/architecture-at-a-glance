@@ -4,6 +4,7 @@ This architecture is a hybrid cloud setup, integrating my self-hosted on-premise
 
 On Premises:
 It consists of 6 virtual machines running on my bare-metal Proxmox hypervisor.
+
 <img width="277" height="186" alt="image" src="https://github.com/user-attachments/assets/f3c56c8b-ad07-48cb-9f4a-cfdb879e7e0f" />
 
 The main idea behind this design is separation of duties and VLAN segmentation. Each VM performs a specific job, and only specific users are allowed to connect. Each VM can also only see the VLANs it's permitted to, which makes further lateral movement harder in case of a breach.
