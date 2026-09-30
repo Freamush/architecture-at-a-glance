@@ -2,6 +2,8 @@
 For the last couple of years, I have been working on a large project. We are building our own gaming server network, and my role has been mainly focused on infrastructure architecture and securing it according to zero-trust best practices.
 This architecture is a hybrid cloud setup, integrating my self-hosted on-premises servers with OVH cloud.
 
+<img width="1091" height="936" alt="image" src="https://github.com/user-attachments/assets/3346f4b7-8114-4cc2-99bb-74900d6d7e4e" />
+
 On Premises:
 It consists of 6 virtual machines running on my bare-metal Proxmox hypervisor.
 
@@ -27,5 +29,3 @@ Tailscale also provides DNS and TLS certificate issuance, so all tailnet traffic
 
 OVH
 The OVH cloud infrastructure acts as the "front door." The OVH VMs are the only nodes reachable without Tailscale, they act as reverse proxies, connected to the tailnet, forwarding traffic into the on-premises network.
-
-<img width="1092" height="936" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/f86416ee-91db-4569-8c75-d796f3efc64d" />
