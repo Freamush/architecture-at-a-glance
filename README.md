@@ -25,7 +25,18 @@ Perimeter:
 To secure the on-premises network, I implemented Tailscale as a mesh VPN. Since it uses outbound connections and relay servers, there are no public open ports on the on-prem architecture, everything is hidden and inaccessible without a Tailscale account and a trusted device on the architecture's tailnet. Tailscale forms a mesh network where every device can potentially see every other, but ACL tags let me control which devices can see which VM. VMs themselves don't communicate over the tailnet, so they use their own private network via OPNsense for internal traffic.
 <img width="1550" height="99" alt="image" src="https://github.com/user-attachments/assets/e58ac3e5-0c97-4d21-9146-83c66f4956e5" />
 
+Instance of a Tailscale Tag used for OVH VM
+<img width="413" height="211" alt="image" src="https://github.com/user-attachments/assets/3fe7578a-37ff-4a20-9fb7-1decb448d278" />
+
+
 Tailscale also provides DNS and TLS certificate issuance, so all tailnet traffic can be fully encrypted using certificates generated for internal communication.
 
 OVH
 The OVH cloud infrastructure acts as the "front door." The OVH VMs are the only nodes reachable without Tailscale, they act as reverse proxies, connected to the tailnet, forwarding traffic into the on-premises network.
+
+Wazuh
+Wazuh SIEM collects an information from all of the VMs, including OVH ones via Tailnet. Here you can see an example of a dashboard that shows connections to the infrastructure:
+<img width="2511" height="1067" alt="image" src="https://github.com/user-attachments/assets/bf2436c2-2818-46cf-9009-cc2cb47951df" />
+
+Example of a custom Alert that comes from Wazuh to telegram chat.
+<img width="2511" height="1067" alt="image" src="https://github.com/user-attachments/assets/c1e2c3de-6912-4f0f-8666-16c379d3fe07" />
