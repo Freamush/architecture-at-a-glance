@@ -29,6 +29,10 @@ Instance of a Tailscale Tag used for OVH VM
 
 <img width="413" height="211" alt="image" src="https://github.com/user-attachments/assets/3fe7578a-37ff-4a20-9fb7-1decb448d278" />
 
+By default internal VMs cannot use Tailnet for communication, but this is a great example of an exclusion that I came up with. Backend actively uses docker registry and it requires HTTPS for secure communication. In order to avoid insecure-registries in daemon.json, I came up with local TLS using Tailscale serve, so that is why communication via Tailnet from Backend VM with Misc VM (Registry) is allowed.
+
+<img width="423" height="151" alt="image" src="https://github.com/user-attachments/assets/7c64e234-1774-4744-95ac-772709421eec" />
+
 Tailscale also provides DNS and TLS certificate issuance, so all tailnet traffic can be fully encrypted using certificates generated for internal communication.
 
 OVH
