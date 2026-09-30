@@ -38,6 +38,7 @@ Wazuh
 Wazuh SIEM collects an information from all of the VMs, including OVH ones via Tailnet. 
 
 Here you can see an example of a custom Alert that comes from Wazuh to the telegram chat.
+
 <img width="335" height="167" alt="image" src="https://github.com/user-attachments/assets/319f98f4-ccf7-4749-9aad-374b3156d0fc" />
 
 Dashboard that shows connections to the infrastructure:
