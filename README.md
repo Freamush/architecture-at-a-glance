@@ -27,3 +27,5 @@ Tailscale also provides DNS and TLS certificate issuance, so all tailnet traffic
 
 OVH
 The OVH cloud infrastructure acts as the "front door." The OVH VMs are the only nodes reachable without Tailscale, they act as reverse proxies, connected to the tailnet, forwarding traffic into the on-premises network.
+
+<img width="1092" height="936" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/f86416ee-91db-4569-8c75-d796f3efc64d" />
